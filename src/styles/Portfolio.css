@@ -1,0 +1,54 @@
+/* Container untuk memusatkan judul */
+.portfolio-title-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Jarak antara judul dan konten di bawahnya */
+}
+
+/* Gaya untuk judul PORTOFOLIO */
+.portfolio-title {
+  font-size: 2.1rem; /* Ukuran seperti sebelumnya */
+  color: #000000;
+  text-align: center;
+}
+
+#portfolio {
+  padding: 20px;
+}
+
+#portfolio > .wrapper {
+  overflow-x: auto; /* Agar memungkinkan scroll horizontal */
+  white-space: nowrap; /* Menghindari pembungkusan baris */
+}
+
+#portfolio > .wrapper > .grid {
+  display: inline-flex; /* Menggunakan inline-flex agar item ditampilkan dalam satu baris */
+  gap: 30px; /* Jarak antar item */
+}
+
+#portfolio > .wrapper > .grid > .item {
+  min-width: 250px; /* Lebar minimum untuk item */
+  flex: 0 0 auto; /* Membuat item tidak menyusut */
+  text-align: center;
+}
+
+#portfolio > .wrapper > .grid > .item img {
+  width: 100%; /* Memastikan gambar memenuhi lebar item */
+  height: auto; /* Mengatur tinggi secara otomatis untuk menjaga aspek rasio */
+  max-height: 300px; /* Meningkatkan tinggi maksimum untuk gambar */
+  object-fit: cover; /* Menjaga aspek rasio dan menghindari pemotongan */
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 4px 8px rgba(27, 25, 158, 0.2); /* Bayangan untuk efek 3D */
+  transition: transform 0.3s; /* Efek transisi untuk zoom */
+}
+
+#portfolio > .wrapper > .grid > .item img:hover {
+  transform: scale(1.05); /* Memperbesar gambar sedikit saat di-hover */
+}
+
+#portfolio > .wrapper > .grid > .item .item-title {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333333;
+  font-weight: 500;
+}

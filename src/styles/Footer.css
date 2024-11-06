@@ -1,0 +1,15 @@
+
+footer {
+    background-color: #39404a;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+    letter-spacing: 5px;
+    overflow: hidden; /* Menyembunyikan teks saat berada di luar tampilan */
+}
+
+footer span {
+    display: inline-block;
+    white-space: nowrap; /* Mencegah teks membungkus ke baris berikutnya */
+    animation: slideBackAndForth 10s linear infinite; /* Berjalan terus-menerus ke kedua arah */
+}

@@ -1,0 +1,127 @@
+nav {
+  background-color: #222831; /* Warna latar belakang untuk navbar */
+  color: #fff; /* Warna teks */
+  position: sticky; /* Agar navbar tetap di atas saat di-scroll */
+  top: 0; /* Posisi dari atas */
+  z-index: 100; /* Agar navbar tetap di atas elemen lainnya */
+  text-transform: uppercase; /* Membuat teks menjadi kapital semua */
+  padding: 10px 0; /* Menambahkan padding vertikal pada navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk memberikan kedalaman */
+}
+
+nav > .wrapper {
+  display: flex; /* Mengatur tampilan menjadi flexbox */
+  justify-content: space-between; /* Menyebar elemen secara merata */
+  align-items: center; /* Mengatur item pada garis tengah */
+  position: relative; /* Posisi relatif untuk elemen anak */
+}
+
+.menu {
+  width: 10%; /* Lebar menu */
+}
+
+.logo {
+  display: flex; /* Mengatur tampilan logo */
+  align-items: center; /* Mengatur item logo pada garis tengah */
+}
+
+.logo > a {
+  color: #fff; /* Warna teks logo */
+  text-decoration: none; /* Menghilangkan garis bawah pada link */
+  font-size: 1.5rem; /* Ukuran font logo */
+  font-weight: 500; /* Ketebalan font */
+  letter-spacing: 7px; /* Jarak antar huruf */
+  margin-left: 230px; /* Margin kiri untuk menggeser logo */
+}
+
+.menu > ul {
+  display: flex; /* Menampilkan menu sebagai flexbox */
+  list-style-type: none; /* Menghilangkan bullet list */
+  margin: 0; /* Menghilangkan margin default */
+  padding: 0; /* Menghilangkan padding default */
+  gap: 20px; /* Jarak antar item menu */
+}
+
+.menu > ul > li > a {
+  text-decoration: none; /* Menghilangkan garis bawah pada link menu */
+  color: #fff; /* Warna teks menu */
+}
+
+/* CSS untuk teks yang bergerak */
+.scrollable-text {
+  white-space: nowrap; /* Mencegah teks terpotong */
+  overflow: hidden; /* Menghindari teks keluar dari batas */
+  position: absolute; /* Posisi absolut untuk memindahkan teks */
+  right: 0; /* Mulai dari kanan */
+  animation: scroll-text 10s linear infinite; /* Mengatur durasi dan efek looping */
+  color: #fff; /* Warna teks */
+  font-size: 1.2rem; /* Ukuran font */
+  padding-left: 20px; /* Ruang dari sisi kiri */
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%); /* Mulai dari luar layar di sebelah kanan */
+  }
+  100% {
+    transform: translateX(-100%); /* Bergerak ke luar layar di sebelah kiri */
+  }
+}
+
+nav > .wrapper > button {
+  cursor: pointer; /* Menampilkan kursor pointer saat hover */
+  display: none; /* Menyembunyikan tombol di layar besar */
+  position: absolute; /* Posisi absolut untuk tombol */
+  right: 10px; /* Jarak dari kanan */
+  top: 10px; /* Jarak dari atas */
+  border: 0; /* Menghilangkan border */
+  background-color: transparent; /* Latar belakang transparan */
+  padding: 0; /* Menghilangkan padding */
+}
+
+nav > .wrapper > button > svg {
+  color: #fff; /* Warna ikon tombol */
+  font-size: 50px; /* Ukuran ikon */
+}
+
+@media only screen and (max-width: 1000px) {
+  .menu > ul {
+    display: none; /* Menyembunyikan menu di layar kecil */
+  }
+  
+  .menu.tampil > ul {
+    display: inline; /* Menampilkan menu saat tombol ditekan */
+  }
+  
+  .menu {
+    text-align: right; /* Menyusun menu di sebelah kanan */
+  }
+  
+  nav > .wrapper > button {
+    display: inline; /* Menampilkan tombol di layar kecil */
+  }
+  
+  .menu > ul {
+    flex-direction: column; /* Mengubah orientasi menu menjadi kolom */
+    background-color: #000; /* Latar belakang menu */
+    width: 100%; /* Lebar menu penuh */
+    position: fixed; /* Posisi tetap untuk menu */
+    top: 70px; /* Jarak dari atas */
+    left: 0; /* Jarak dari kiri */
+  }
+  
+  .menu > ul > li {
+    text-align: left; /* Mengatur teks menu ke kiri */
+    cursor: pointer; /* Menampilkan kursor pointer saat hover */
+  }
+  
+  .menu > ul > li > a {
+    display: inline-block; /* Menampilkan link sebagai block */
+    padding: 15px 20px 15px 50px; /* Padding link menu */
+    width: 100%; /* Lebar penuh untuk link menu */
+  }
+  
+  .menu > ul > li > a:hover {
+    background-color: #222831; /* Mengubah warna latar belakang saat hover */
+  }
+}
